@@ -1,1 +1,4 @@
 res://Drive.tscn
+res://Scripts/Auto.cs
+res://Scripts/GameController.cs
+res://Scripts/NewScript.cs
