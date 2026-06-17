@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=4 uid="uid://barxk3h4wq1bq"]
 
 [ext_resource type="Script" uid="uid://6dvjyaxn55xh" path="res://Scripts/GameController.cs" id="1_hhscq"]
-[ext_resource type="Script" uid="uid://by2qeb6e4b4rp" path="res://Scripts/Auto.cs" id="1_ql7m1"]
+[ext_resource type="Script" uid="uid://rwhg2401gc5c" path="res://Scripts/Auto1.cs" id="2_hhscq"]
 [ext_resource type="Texture2D" uid="uid://blju8l5aosgo5" path="res://Sprites/Formula64x64/black_car.png" id="2_ql7m1"]
 [ext_resource type="Texture2D" uid="uid://dexinvc33mcbm" path="res://Sprites/Race_Tileset/Race_Tileset_Map.png" id="3_ql7m1"]
 
@@ -225,7 +225,7 @@ script = ExtResource("1_hhscq")
 z_index = 2
 position = Vector2(280, 58)
 scale = Vector2(0.3, 0.3)
-script = ExtResource("1_ql7m1")
+script = ExtResource("2_hhscq")
 
 [node name="Area2D" type="Area2D" parent="Auto"]
 position = Vector2(-393.333, -96.6667)
