@@ -4,3 +4,6 @@ res://Scripts/Auto1.cs
 res://Scripts/NewScript.cs
 res://Scripts/EnemyController.cs
 res://Scripts/GameController.cs
+res://Scripts/View Scripts/Auto_View.cs
+res://Scripts/Controller-Scripts/EnemyController.cs
+res://Scripts/Controller-Scripts/GameController.cs

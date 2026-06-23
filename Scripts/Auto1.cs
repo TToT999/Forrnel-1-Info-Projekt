@@ -14,7 +14,7 @@ bool drifting = false;
 
 public override void _PhysicsProcess(double delta)
 {
-		//GD.Print(Velocity);
+		//GD.Print(GlobalPosition);
 		float dt = (float) delta;
 
 //Berechnung Reibung und Kurvenfahrt
@@ -77,7 +77,7 @@ public override void _PhysicsProcess(double delta)
   		else reibung = 2.0f;
 	float drotation = Mathf.AngleDifference(Rotation, currentRotation);
 	if (vel.Length() > 0 && Math.Abs(drotation) > 0.001f){
-        kurvenradius = 2*Math.Abs(vel.Length() / (drotation / dt));}
+        kurvenradius = Math.Abs(vel.Length() / (drotation / dt));}
     else kurvenradius = 9999f;
 	maxv = 6* Math.Sqrt(kurvenradius * 10f * reibung);
     currentRotation = Rotation;}
