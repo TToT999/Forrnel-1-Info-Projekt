@@ -1,3 +1,7 @@
+Control
+HBoxContainer
+Button
+MenuButton
 Sprite2D
 Path2D
 Node
