@@ -1,0 +1,105 @@
+[gd_scene load_steps=7 format=3 uid="uid://djygesdl0g83d"]
+
+[ext_resource type="Script" uid="uid://hdgktvaco28y" path="res://MainMenu.cs" id="1_7vrkn"]
+[ext_resource type="Texture2D" uid="uid://dxwucydlijj4x" path="res://Sprites/na_logo_forrnel1.png" id="2_fu7sn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jix8l"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 2
+shadow_offset = Vector2(0, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_glbon"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 2
+shadow_offset = Vector2(0, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nlkkf"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 2
+shadow_offset = Vector2(0, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qe12f"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 2
+shadow_offset = Vector2(0, 2)
+
+[node name="Main Menu" type="Node2D"]
+script = ExtResource("1_7vrkn")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1153.0
+offset_bottom = 647.0
+
+[node name="NaLogoForrnel1" type="Sprite2D" parent="Control"]
+show_behind_parent = true
+position = Vector2(602, 309)
+scale = Vector2(1.10648, 0.764352)
+texture = ExtResource("2_fu7sn")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -473.5
+offset_top = 111.5
+offset_right = 474.5
+offset_bottom = 194.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 250
+
+[node name="Start" type="Button" parent="Control/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 27
+theme_override_styles/normal = SubResource("StyleBoxFlat_jix8l")
+text = "     Start     "
+
+[node name="Bestenliste" type="Button" parent="Control/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 27
+theme_override_styles/normal = SubResource("StyleBoxFlat_glbon")
+text = " Bestenliste "
+
+[node name="Verlassen" type="Button" parent="Control/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 27
+theme_override_styles/normal = SubResource("StyleBoxFlat_nlkkf")
+text = "  Verlassen  "
+
+[node name="Einstellungen" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -176.0
+offset_bottom = 73.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 27
+theme_override_styles/normal = SubResource("StyleBoxFlat_qe12f")
+text = "Einstellungen"
+
+[connection signal="pressed" from="Control/HBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Control/HBoxContainer/Bestenliste" to="." method="_on_bestenliste_pressed"]
+[connection signal="pressed" from="Control/HBoxContainer/Verlassen" to="." method="_on_verlassen_pressed"]
+[connection signal="pressed" from="Control/Einstellungen" to="." method="_on_einstellungen_pressed"]

@@ -29,22 +29,22 @@ public override void _PhysicsProcess(double delta)
 
 //Rotation
 	float turnInput = 0f;
-    if (Input.IsActionPressed("Turn-Right")) turnInput += 1f;
-    if (Input.IsActionPressed("Turn-Left")) turnInput -= 1f;
+	if (Input.IsActionPressed("Turn-Right")) turnInput += 1f;
+	if (Input.IsActionPressed("Turn-Left")) turnInput -= 1f;
   	Rotation += turnInput * 2.5f *turnfactor* dt;	
 
 //Movement
 	float moveInput = 0f;
-    if (Input.IsActionPressed("Acceleration")) moveInput = 1.7f;
-    if (Input.IsActionPressed("Brake")) {if(Velocity.Length() > 0) {Velocity = Velocity.Normalized()*(Velocity.Length()-1.7f);
+	if (Input.IsActionPressed("Acceleration")) moveInput = 1.7f;
+	if (Input.IsActionPressed("Brake")) {if(Velocity.Length() > 0) {Velocity = Velocity.Normalized()*(Velocity.Length()-1.7f);
 	moveInput = 0;}}
    	forward = Vector2.Up.Rotated(Rotation);
 //Friction Braking
 	if(!Input.IsActionPressed("Acceleration") && !Input.IsActionPressed("Brake")){
-      Velocity *= 0.999f; 
+	  Velocity *= 0.999f; 
 	  moveInput = 0;}
-    	Vector2 neuGeschwindigkeit = (Velocity.Length() + moveInput)*forward;
-    	neuGeschwindigkeit = neuGeschwindigkeit.LimitLength(400);
+		Vector2 neuGeschwindigkeit = (Velocity.Length() + moveInput)*forward;
+		neuGeschwindigkeit = neuGeschwindigkeit.LimitLength(400);
 		if(Velocity.Length() <= maxv && drifting == false){
 			Velocity = neuGeschwindigkeit;
 		}else if (Velocity.Length() > maxv){
@@ -74,8 +74,8 @@ public override void _PhysicsProcess(double delta)
 		Vector2 velocity = new Vector2(0,1);
 	if(Velocity.Length() > 1){
 		float minradius = (Velocity.Length()*Velocity.Length())/(reibung*10f);
-    float deltaomega = Velocity.Length()/minradius;
-    float maxTurn = deltaomega * dt*2000;
+	float deltaomega = Velocity.Length()/minradius;
+	float maxTurn = deltaomega * dt*2000;
 	double angleTo = Velocity.AngleTo(forward);
 	float turn = (float) angleTo * 2;
 	turn = Mathf.Clamp(turn, -maxTurn, maxTurn);
@@ -94,12 +94,12 @@ public override void _PhysicsProcess(double delta)
   		else reibung = 2.0f;
 	float drotation = Mathf.AngleDifference(Rotation, currentRotation);
 	if (vel.Length() > 0 && Math.Abs(drotation) > 0.001f){
-        kurvenradius = Math.Abs(vel.Length() / (drotation / dt));}
-    else kurvenradius = 9999f;
+		kurvenradius = Math.Abs(vel.Length() / (drotation / dt));}
+	else kurvenradius = 9999f;
 	maxv = 6* Math.Sqrt(kurvenradius * 10f * reibung);
-    currentRotation = Rotation;}
+	currentRotation = Rotation;}
 
 	public void Set_IsOffTrack (bool input){
-    isOffTrack = input;
+	isOffTrack = input;
   }
 }

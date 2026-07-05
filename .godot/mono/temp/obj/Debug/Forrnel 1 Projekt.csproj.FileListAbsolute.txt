@@ -16,3 +16,12 @@ C:\Dev\Github clones\Forrnel-1-Info-Projekt\.godot\mono\temp\obj\Debug\refint\Fo
 C:\Dev\Github clones\Forrnel-1-Info-Projekt\.godot\mono\temp\obj\Debug\Forrnel 1 Projekt.pdb
 C:\Dev\Github clones\Forrnel-1-Info-Projekt\.godot\mono\temp\obj\Debug\Forrnel 1 Projekt.genruntimeconfig.cache
 C:\Dev\Github clones\Forrnel-1-Info-Projekt\.godot\mono\temp\obj\Debug\ref\Forrnel 1 Projekt.dll
+C:\Users\User\Documents\GitHub\Forrnel-1-Info-Projekt\.godot\mono\temp\obj\Debug\Forrnel 1 Projekt.csproj.AssemblyReference.cache
+C:\Users\User\Documents\GitHub\Forrnel-1-Info-Projekt\.godot\mono\temp\obj\Debug\Forrnel 1 Projekt.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Documents\GitHub\Forrnel-1-Info-Projekt\.godot\mono\temp\obj\Debug\Forrnel 1 Projekt.AssemblyInfoInputs.cache
+C:\Users\User\Documents\GitHub\Forrnel-1-Info-Projekt\.godot\mono\temp\obj\Debug\Forrnel 1 Projekt.AssemblyInfo.cs
+C:\Users\User\Documents\GitHub\Forrnel-1-Info-Projekt\.godot\mono\temp\obj\Debug\Forrnel 1 Projekt.csproj.CoreCompileInputs.cache
+C:\Users\User\Documents\GitHub\Forrnel-1-Info-Projekt\.godot\mono\temp\obj\Debug\Forrnel 1 Projekt.sourcelink.json
+C:\Users\User\Documents\GitHub\Forrnel-1-Info-Projekt\.godot\mono\temp\obj\Debug\Forrnel 1 Projekt.dll
+C:\Users\User\Documents\GitHub\Forrnel-1-Info-Projekt\.godot\mono\temp\obj\Debug\refint\Forrnel 1 Projekt.dll
+C:\Users\User\Documents\GitHub\Forrnel-1-Info-Projekt\.godot\mono\temp\obj\Debug\Forrnel 1 Projekt.pdb
