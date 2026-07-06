@@ -47,9 +47,9 @@ public override void _PhysicsProcess(double delta)
 		neuGeschwindigkeit = neuGeschwindigkeit.LimitLength(400);
 		if(Velocity.Length() <= maxv && drifting == false){
 			Velocity = neuGeschwindigkeit;
-		}else if (Velocity.Length() > maxv){
+		}else if (Velocity.Length() > maxv || drifting ){
 		//Velocity = Drift(dt) * Velocity.Length();
-		Velocity = 0.6f*Velocity;
+		Velocity = (float)(1-delta)*Velocity;
 		drifting = true;}
 		if(Velocity.Length()< 30) drifting = false;
 		deltatime += dt;
@@ -86,8 +86,8 @@ public override void _PhysicsProcess(double delta)
 }
 	public void BerechnungTurn(Vector2 vel, float dt){
 		if(Velocity.Length() > 200){
-			turnfactor = (float) (1/(0.001* Velocity.Length())); // ÄNDERN DAS IST SCHWACHSINN
-		}else if(Velocity.Length() == 0) turnfactor = 0;
+			turnfactor = (float) (1-(0.0005* Velocity.Length())); // ÄNDERN DAS IST SCHWACHSINN
+		}else if(Velocity.Length() < 1 ) turnfactor = 0;
 		else turnfactor = 1;
 
 	 if(isOffTrack) reibung = 1f;

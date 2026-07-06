@@ -1,9 +1,14 @@
+<<<<<<< Updated upstream
 Control
 HBoxContainer
 Button
 MenuButton
 Sprite2D
+=======
+>>>>>>> Stashed changes
 Path2D
+GPUParticles2D
+Sprite2D
 Node
 Node2D
 CollisionShape2D

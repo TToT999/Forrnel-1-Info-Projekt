@@ -1,13 +1,16 @@
 using Godot;
 using System;
 
-public partial class Track_Checkpoint : Area2D
+
+public partial class Track_Checkpoint : Node2D
 {
 	private bool isFinishLine = false;
-	// Called when the node enters the scene tree for the first time.
+	private int checkpointNumber;
+	private GameController controller;
+	
 	public override void _Ready()
 	{
-		
+		controller = GetParent().GetParent<GameController>();
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -15,11 +18,16 @@ public partial class Track_Checkpoint : Area2D
 	{
 	}
 
-	public bool on_area_entered(Node2D body){
-	 	return true;
+	public void on_area_entered(Node2D body){
+	 	controller.SetTouchedCheckpoint(checkpointNumber);
+		controller.set_inCheckpoint(true);
+	}
+	public void on_area_exited(Node2D body){
+		controller.set_inCheckpoint(false);
+	}
+	public void set_checkpointNumber (int i)
+	{
+		checkpointNumber = i;
+	}
 
-	}
-	public bool on_area_exited(Node2D body){
-		return true;
-	}
 }
