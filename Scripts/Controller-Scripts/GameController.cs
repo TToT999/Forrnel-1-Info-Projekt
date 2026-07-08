@@ -16,6 +16,7 @@ public partial class GameController : Node
  private Node2D checkpointnode;
  private int lastcheckpoint = -1;
  private bool currentlyInCheckpoint = false;
+ private Custom_List list;
 
  public override void _Ready(){
     Player = GetNode<Auto1>("/root/Game/Auto");
@@ -27,6 +28,7 @@ public partial class GameController : Node
     track1 = track1path.GetCurve();
     checkpointscene = GD.Load<PackedScene>("res://Track_Checkpoint.tscn");
     checkpointnode = GetNode<Node2D>("CheckpointController");
+    list = GetNode<Custom_List>("Custom_List");
     InstanceCheckpointsTrack1();
  }
 
@@ -51,8 +53,8 @@ public override void _PhysicsProcess(double delta){
    CalcTileMapPos();
 }
 
-   public void InstanceCheckpointsTrack1()
-   {  
+  /* public void InstanceCheckpointsTrack1() //Veralteter Code mit Libary Liste (Behalten falls andere nicht funktioniert)
+   {  set_inCheckpoint(true);
       for (int i = 0; i < track1.GetPointCount(); i++)
       {
          Track_Checkpoint neu = checkpointscene.Instantiate<Track_Checkpoint>();
@@ -66,8 +68,32 @@ public override void _PhysicsProcess(double delta){
          checkpoints[i].Rotation = current.AngleToPoint(next) + 0.5f* ((float) Math.PI);
          checkpoints[i].set_checkpointNumber(i);
       }
+      GD.Print(checkpoints[46].Position);
+      set_inCheckpoint(false);
+   }
+*/
+
+   public void InstanceCheckpointsTrack1()
+   {
+      for (int i = 0; i < track1.GetPointCount(); i++)
+      {
+         Track_Checkpoint neu = checkpointscene.Instantiate<Track_Checkpoint>();
+         checkpointnode.AddChild(neu);
+         neu.Position = track1.GetPointPosition(i);
+            Vector2 current = track1.GetPointPosition(i); //Berechnung Angle zum nächsten Punkt für Rotationsberechnung
+            Vector2 next;
+            if(i < track1.GetPointCount()-1) next = track1.GetPointPosition(i+1);
+            else next = current;
+         if(i==0){list.set_Initial(neu);}
+         else{list.get_Object(i-1).set_Next(neu);}
+         list.get_Object(i).Rotation = current.AngleToPoint(next) + 0.5f* ((float) Math.PI);
+         list.get_Object(i).set_checkpointNumber(i);
+         
+         }
+
 
    }
+
 
    public void set_inCheckpoint(bool b)
    {

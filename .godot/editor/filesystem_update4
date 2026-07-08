@@ -1,16 +1,8 @@
-res://Drive.tscn
-res://enemy.tscn
-res://Track_Checkpoint.tscn
-<<<<<<< Updated upstream
-res://Scripts/Auto1.cs
-res://MainMenu.cs
-res://main_menu.tscn
-res://options.tscn
-res://bestenliste.tscn
-=======
 res://Scripts/Controller-Scripts/GameController.cs
-res://Scripts/Auto1.cs
-res://Scripts/Model-Scripts/Track_Checkpoint.cs
-res://Scripts/Controller-Scripts/EnemyController.cs
+res://Drive.tscn
 res://Scripts/Controller-Scripts/Auto1.cs
->>>>>>> Stashed changes
+res://Scripts/Model-Scripts/Custuom_List.cs
+res://Scripts/Controller-Scripts/MainMenu.cs
+res://Scripts/Controller-Scripts/EnemyController.cs
+res://Scripts/Model-Scripts/Track_Checkpoint.cs
+res://Scripts/Model-Scripts/Custom_List.cs

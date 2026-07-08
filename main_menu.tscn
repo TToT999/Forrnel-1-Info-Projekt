@@ -1,7 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://djygesdl0g83d"]
 
-[ext_resource type="Script" uid="uid://hdgktvaco28y" path="res://MainMenu.cs" id="1_7vrkn"]
+[ext_resource type="Script" uid="uid://hdgktvaco28y" path="res://Scripts/Controller-Scripts/MainMenu.cs" id="1_7vrkn"]
 [ext_resource type="Texture2D" uid="uid://dxwucydlijj4x" path="res://Sprites/na_logo_forrnel1.png" id="2_fu7sn"]
+
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jix8l"]
 bg_color = Color(0, 0, 0, 1)

@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=4 uid="uid://barxk3h4wq1bq"]
+[gd_scene load_steps=11 format=4 uid="uid://barxk3h4wq1bq"]
 
 [ext_resource type="Script" uid="uid://6dvjyaxn55xh" path="res://Scripts/Controller-Scripts/GameController.cs" id="1_hhscq"]
 [ext_resource type="Script" uid="uid://rwhg2401gc5c" path="res://Scripts/Controller-Scripts/Auto1.cs" id="2_hhscq"]
 [ext_resource type="Texture2D" uid="uid://blju8l5aosgo5" path="res://Sprites/Formula64x64/black_car.png" id="2_ql7m1"]
+[ext_resource type="Script" uid="uid://bpbryfuwx1d80" path="res://Scripts/Model-Scripts/Custom_List.cs" id="5_8ktr6"]
 [ext_resource type="Texture2D" uid="uid://cjc5lgh4yxhpx" path="res://Sprites/Track small.png" id="5_qauoq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hhscq"]
@@ -3591,6 +3592,9 @@ script = ExtResource("1_hhscq")
 [node name="CheckpointController" type="Node2D" parent="CONTROLLER"]
 
 [node name="Checkpoints" type="Node" parent="CONTROLLER"]
+
+[node name="Custom_List" type="Node" parent="CONTROLLER"]
+script = ExtResource("5_8ktr6")
 
 [connection signal="body_entered" from="Auto/Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Auto/Area2D" to="." method="_on_area_2d_body_exited"]
