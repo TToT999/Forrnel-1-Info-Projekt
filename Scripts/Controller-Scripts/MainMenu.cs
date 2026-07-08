@@ -15,7 +15,7 @@ public partial class MainMenu : Node2D
 		GetTree().Quit();
 	}
 	void _on_start_pressed(){
-		 GetTree().ChangeSceneToFile("res://Drive.tscn"); 
+		 GetTree().ChangeSceneToFile("res://start.tscn"); 
 		}
 	void _on_einstellungen_pressed(){ 
 		GetTree().ChangeSceneToFile("res://options.tscn");
