@@ -25,3 +25,12 @@ C:\Users\User\Documents\GitHub\Forrnel-1-Info-Projekt\.godot\mono\temp\obj\Debug
 C:\Users\User\Documents\GitHub\Forrnel-1-Info-Projekt\.godot\mono\temp\obj\Debug\Forrnel 1 Projekt.dll
 C:\Users\User\Documents\GitHub\Forrnel-1-Info-Projekt\.godot\mono\temp\obj\Debug\refint\Forrnel 1 Projekt.dll
 C:\Users\User\Documents\GitHub\Forrnel-1-Info-Projekt\.godot\mono\temp\obj\Debug\Forrnel 1 Projekt.pdb
+C:\Users\User\Documents\GitHub\Forrnel-1-Info-Projekt\.godot\mono\temp\bin\Debug\Forrnel 1 Projekt.deps.json
+C:\Users\User\Documents\GitHub\Forrnel-1-Info-Projekt\.godot\mono\temp\bin\Debug\Forrnel 1 Projekt.runtimeconfig.json
+C:\Users\User\Documents\GitHub\Forrnel-1-Info-Projekt\.godot\mono\temp\bin\Debug\Forrnel 1 Projekt.dll
+C:\Users\User\Documents\GitHub\Forrnel-1-Info-Projekt\.godot\mono\temp\bin\Debug\Forrnel 1 Projekt.pdb
+C:\Users\User\Documents\GitHub\Forrnel-1-Info-Projekt\.godot\mono\temp\bin\Debug\GodotSharp.dll
+C:\Users\User\Documents\GitHub\Forrnel-1-Info-Projekt\.godot\mono\temp\bin\Debug\GodotSharpEditor.dll
+C:\Users\User\Documents\GitHub\Forrnel-1-Info-Projekt\.godot\mono\temp\obj\Debug\Forrnel .3F0CC34E.Up2Date
+C:\Users\User\Documents\GitHub\Forrnel-1-Info-Projekt\.godot\mono\temp\obj\Debug\Forrnel 1 Projekt.genruntimeconfig.cache
+C:\Users\User\Documents\GitHub\Forrnel-1-Info-Projekt\.godot\mono\temp\obj\Debug\ref\Forrnel 1 Projekt.dll
