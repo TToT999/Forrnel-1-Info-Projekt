@@ -20,7 +20,7 @@ public partial class Custom_List : Node
 		for (int b = 0; b < i; b++)
 		{if(!(current.get_Next() == null)){
 			current = current.get_Next();
-			GD.Print(current.get_CheckpointNumber());
+			//GD.Print(current.get_CheckpointNumber());
 		}else GD.Print("Index out of Range");
 		}
 		return current;

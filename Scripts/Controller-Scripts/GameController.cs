@@ -29,7 +29,7 @@ public partial class GameController : Node
     checkpointscene = GD.Load<PackedScene>("res://Track_Checkpoint.tscn");
     checkpointnode = GetNode<Node2D>("CheckpointController");
     list = GetNode<Custom_List>("Custom_List");
-    InstanceCheckpointsTrack1();
+    InstanceCheckpointsTrack(track1);
  }
 
    public Vector2 CalcTileMapPos(){ //Methode falsch rum gedacht?
@@ -73,16 +73,16 @@ public override void _PhysicsProcess(double delta){
    }
 */
 
-   public void InstanceCheckpointsTrack1()
+   public void InstanceCheckpointsTrack(Curve2D track)
    {
-      for (int i = 0; i < track1.GetPointCount(); i++)
+      for (int i = 0; i < track.GetPointCount()-1; i++)
       {
          Track_Checkpoint neu = checkpointscene.Instantiate<Track_Checkpoint>();
          checkpointnode.AddChild(neu);
-         neu.Position = track1.GetPointPosition(i);
-            Vector2 current = track1.GetPointPosition(i); //Berechnung Angle zum nächsten Punkt für Rotationsberechnung
+         neu.Position = track.GetPointPosition(i);
+            Vector2 current = track.GetPointPosition(i); //Berechnung Angle zum nächsten Punkt für Rotationsberechnung
             Vector2 next;
-            if(i < track1.GetPointCount()-1) next = track1.GetPointPosition(i+1);
+            if(i < track.GetPointCount()-1) next = track.GetPointPosition(i+1);
             else next = current;
          if(i==0){list.set_Initial(neu);}
          else{list.get_Object(i-1).set_Next(neu);}
@@ -94,22 +94,24 @@ public override void _PhysicsProcess(double delta){
 
    }
 
-
-   public void set_inCheckpoint(bool b)
+   public void TimeInvalidation()
    {
-      currentlyInCheckpoint = b;
+      
    }
+
+
+
 
    public void SetTouchedCheckpoint(int i)
-   {if(!currentlyInCheckpoint){
-      GD.Print(lastcheckpoint + i);
-      if((lastcheckpoint +1) == i){
+   {
+     // GD.Print(i );
+      if((lastcheckpoint +1) == i ||(lastcheckpoint == (track1.GetPointCount()-2) && i == 0) || lastcheckpoint == -1){
       lastcheckpoint = i;
       GD.Print("No Cut");}
-      else {//lastcheckpoint = -5;
+      else {lastcheckpoint = i;
       GD.Print("Track Cut");} }
       // Tut noch nix hier bitte dann Connection zu Track Cut und Zeitregistrierung setzen
-   }
+   
 
 
 
