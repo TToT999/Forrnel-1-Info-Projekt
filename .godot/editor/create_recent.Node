@@ -1,13 +1,13 @@
+Node2D
+Sprite2D
+Node
+RemoteTransform2D
 Button
 Control
-Node
 HBoxContainer
 MenuButton
-Sprite2D
 Path2D
 GPUParticles2D
-Sprite2D
-Node2D
 CollisionShape2D
 Area2D
 CharacterBody2D

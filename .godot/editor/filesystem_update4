@@ -1,12 +1,13 @@
+res://Scripts/Controller-Scripts/Auto1.cs
 res://Drive.tscn
 res://main_menu.tscn
 res://start.tscn
 res://trackwahl.tscn
-res://Scripts/Controller-Scripts/EnemyController.cs
+res://Scripts/Controller-Scripts/GameController.cs
 res://Scripts/Model-Scripts/Track_Checkpoint.cs
 res://Scripts/Controller-Scripts/Start.cs
 res://Scripts/Controller-Scripts/Trackwahl.cs
-res://Scripts/Controller-Scripts/GameController.cs
-res://Scripts/Model-Scripts/Custom_List.cs
-res://Scripts/Controller-Scripts/Auto1.cs
 res://Scripts/Controller-Scripts/MainMenu.cs
+res://Scripts/Model-Scripts/Custom_List.cs
+res://test/test_Auto1.cs
+res://test/test_Auto1.gd

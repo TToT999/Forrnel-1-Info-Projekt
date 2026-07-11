@@ -18,98 +18,69 @@ public partial class GameController : Node
  private bool currentlyInCheckpoint = false;
  private Custom_List list;
 
- public override void _Ready(){
-    Player = GetNode<Auto1>("/root/Game/Auto");
-    PlayerCollision = GetNode<Area2D>("/root/Game/Auto/Area2D");
-    Track =  GetNode<TileMapLayer>("/root/Game/Tracks/TileMapLayer");
-    //GD.Print(Track);
-    checkpoints = new List<Track_Checkpoint>();
-    track1path = GetNode<Path2D>("/root/Game/Tracks/TileMapLayer/Track_1");
-    track1 = track1path.GetCurve();
-    checkpointscene = GD.Load<PackedScene>("res://Track_Checkpoint.tscn");
-    checkpointnode = GetNode<Node2D>("CheckpointController");
-    list = GetNode<Custom_List>("Custom_List");
-    InstanceCheckpointsTrack(track1);
+public override void _Ready(){
+   Player = GetNode<Auto1>("/root/Game/Auto");
+   PlayerCollision = GetNode<Area2D>("/root/Game/Auto/Area2D");
+
+   Track =  GetNode<TileMapLayer>("/root/Game/Tracks/TileMapLayer");
+   checkpoints = new List<Track_Checkpoint>();
+   track1path = GetNode<Path2D>("/root/Game/Tracks/TileMapLayer/Track_1");
+   track1 = track1path.GetCurve();
+
+   checkpointscene = GD.Load<PackedScene>("res://Track_Checkpoint.tscn");
+   checkpointnode = GetNode<Node2D>("CheckpointController");
+
+   list = GetNode<Custom_List>("Custom_List");
+
+   InstanceCheckpointsTrack(track1);
  }
 
-   public Vector2 CalcTileMapPos(){ //Methode falsch rum gedacht?
+public Vector2 CalcTileMapPos(){ //Methode falsch rum gedacht?
    Vector2 playerGlobal = Player.GlobalPosition;
    Vector2 playerLocalToTilemap = Track.ToGlobal(playerGlobal);
    Vector2I cell = Track.LocalToMap(playerLocalToTilemap);
-   //GD.Print("Cell: " + cell);
-   return cell;
-   }
+return cell;
+}
 
   
 
    public void _on_area_2d_body_entered(Node2D body){
+      GD.Print("On");
       if(body is TileMapLayer) Player.Set_IsOffTrack(false);}
      
    
    public void _on_area_2d_body_exited(Node2D body){
+      GD.Print("Off");
       if(body is TileMapLayer) Player.Set_IsOffTrack(true);}
 
 public override void _PhysicsProcess(double delta){
    CalcTileMapPos();
 }
 
-  /* public void InstanceCheckpointsTrack1() //Veralteter Code mit Libary Liste (Behalten falls andere nicht funktioniert)
-   {  set_inCheckpoint(true);
-      for (int i = 0; i < track1.GetPointCount(); i++)
-      {
-         Track_Checkpoint neu = checkpointscene.Instantiate<Track_Checkpoint>();
-         checkpointnode.AddChild(neu);
-         checkpoints.Add(neu);
-         Vector2 current = track1.GetPointPosition(i);
-         Vector2 next;
-         if(i < track1.GetPointCount()-1) next = track1.GetPointPosition(i+1);
-         else next = current;
-         checkpoints[i].Position = track1.GetPointPosition(i);
-         checkpoints[i].Rotation = current.AngleToPoint(next) + 0.5f* ((float) Math.PI);
-         checkpoints[i].set_checkpointNumber(i);
-      }
-      GD.Print(checkpoints[46].Position);
-      set_inCheckpoint(false);
+public void InstanceCheckpointsTrack(Curve2D track) {
+   for (int i = 0; i < track.GetPointCount()-1; i++){
+      Track_Checkpoint neu = checkpointscene.Instantiate<Track_Checkpoint>();
+      checkpointnode.AddChild(neu);
+      neu.Position = track.GetPointPosition(i);
+      Vector2 current = track.GetPointPosition(i); //Berechnung Angle zum nächsten Punkt für Rotationsberechnung
+      Vector2 next;
+      if(i < track.GetPointCount()-1) next = track.GetPointPosition(i+1);
+      else next = current;
+      if(i==0){list.set_Initial(neu);}
+      else{list.get_Object(i-1).set_Next(neu);}
+      list.get_Object(i).Rotation = current.AngleToPoint(next) + 0.5f* ((float) Math.PI);
+      list.get_Object(i).set_checkpointNumber(i);   
    }
-*/
-
-   public void InstanceCheckpointsTrack(Curve2D track)
-   {
-      for (int i = 0; i < track.GetPointCount()-1; i++)
-      {
-         Track_Checkpoint neu = checkpointscene.Instantiate<Track_Checkpoint>();
-         checkpointnode.AddChild(neu);
-         neu.Position = track.GetPointPosition(i);
-            Vector2 current = track.GetPointPosition(i); //Berechnung Angle zum nächsten Punkt für Rotationsberechnung
-            Vector2 next;
-            if(i < track.GetPointCount()-1) next = track.GetPointPosition(i+1);
-            else next = current;
-         if(i==0){list.set_Initial(neu);}
-         else{list.get_Object(i-1).set_Next(neu);}
-         list.get_Object(i).Rotation = current.AngleToPoint(next) + 0.5f* ((float) Math.PI);
-         list.get_Object(i).set_checkpointNumber(i);
-         
-         }
-
-
-   }
-
-   public void TimeInvalidation()
-   {
-      
-   }
-
-
-
-
-   public void SetTouchedCheckpoint(int i)
-   {
-     // GD.Print(i );
-      if((lastcheckpoint +1) == i ||(lastcheckpoint == (track1.GetPointCount()-2) && i == 0) || lastcheckpoint == -1){
+}
+public void SetTouchedCheckpoint(int i){
+   if((lastcheckpoint +1) == i ||(lastcheckpoint == (track1.GetPointCount()-2) && i == 0) || lastcheckpoint == -1){
       lastcheckpoint = i;
-      GD.Print("No Cut");}
-      else {lastcheckpoint = i;
-      GD.Print("Track Cut");} }
+      GD.Print("No Cut");
+   }
+   else {lastcheckpoint = i;
+      GD.Print("Track Cut");
+   } 
+}
       // Tut noch nix hier bitte dann Connection zu Track Cut und Zeitregistrierung setzen
    
 

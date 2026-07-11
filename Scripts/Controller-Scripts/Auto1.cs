@@ -4,28 +4,33 @@ using System.Threading.Tasks.Dataflow;
 
 public partial class Auto1 : CharacterBody2D
 {
-private bool isOffTrack = false;
+internal bool isOffTrack = false;
 private float currentRotation;
 private float kurvenradius = 0;
-private float reibung = 2.0f; //Wert anpassen je nach Fahrzeug Todo
+internal float reibung = 2.0f; //Wert anpassen je nach Fahrzeug Todo
 private double maxv = 100;
 float deltatime = 0;
 Vector2 forward;
 bool drifting = false;
 private Sprite2D sprite;
-private float turnfactor;
+internal float turnfactor;
+private Node2D Effects;
 
 public override void _Ready(){
 	sprite = GetNode<Sprite2D>("/root/Game/Auto/Auto-View");
 	sprite.GlobalPosition = GlobalPosition;
+	Effects = GetNode<Node2D>("Effects");
 }
 
 public override void _PhysicsProcess(double delta)
 {
-		float dt = (float) delta;
+	float dt = (float) delta;
 
 //Berechnung Reibung und Kurvenfahrt
 	BerechnungTurn(Velocity, dt);
+
+	if(Velocity.Length() >= maxv*0.9) {Effects.Visible = true;}
+	else Effects.Visible = false;
 
 //Rotation
 	float turnInput = 0f;
@@ -36,41 +41,45 @@ public override void _PhysicsProcess(double delta)
 //Movement
 	float moveInput = 0f;
 	if (Input.IsActionPressed("Acceleration")) moveInput = 1.7f;
-	if (Input.IsActionPressed("Brake")) {if(Velocity.Length() > 0) {Velocity = Velocity.Normalized()*(Velocity.Length()-1.7f);
-	moveInput = 0;}}
+	if (Input.IsActionPressed("Brake") && Velocity.Length() > 0) { // if geändert (Testen ob noch richtig)
+		Velocity = Velocity.Normalized()*(Velocity.Length()-1.7f);
+		moveInput = 0;
+	}
    	forward = Vector2.Up.Rotated(Rotation);
+
 //Friction Braking
 	if(!Input.IsActionPressed("Acceleration") && !Input.IsActionPressed("Brake")){
 	  Velocity *= 0.999f; 
-	  moveInput = 0;}
-		Vector2 neuGeschwindigkeit = (Velocity.Length() + moveInput)*forward;
-		neuGeschwindigkeit = neuGeschwindigkeit.LimitLength(400);
-		if(Velocity.Length() <= maxv && drifting == false){
-			Velocity = neuGeschwindigkeit;
-		}else if (Velocity.Length() > maxv || drifting ){
-		//Velocity = Drift(dt) * Velocity.Length();
+	  moveInput = 0;
+	}
+	Vector2 neuGeschwindigkeit = (Velocity.Length() + moveInput)*forward;
+	neuGeschwindigkeit = neuGeschwindigkeit.LimitLength(400);
+	if(Velocity.Length() <= maxv && drifting == false){
+		Velocity = neuGeschwindigkeit;
+	}
+	else if (Velocity.Length() > maxv || drifting ){
 		Velocity = (float)(1-delta)*Velocity;
-		drifting = true;}
-		if(Velocity.Length()< 30) drifting = false;
-		deltatime += dt;
-		MoveAndSlide();
+		drifting = true;
+	}
+	if(Velocity.Length()< 30) drifting = false;
+	deltatime += dt;
+	MoveAndSlide();
 
 
-		//Debugging Part
-		int zähler = 0;
+	//Debugging Part
+	int zähler = 0;
 	if(Input.IsActionJustPressed("ui_home")){ 
-	GD.Print("Point" + zähler + ":" + GlobalPosition);
-	GD.Print("Ausrichtung" + zähler + ":" + Rotation);
-	zähler += 1;}
-	//Point0:(-375.34137, -626.50977)
-	//Point1:(-991.7255, -155.20346)
-	//Point2:(-1497.6804, -64.5947)
+		GD.Print("Point" + zähler + ":" + GlobalPosition);
+		GD.Print("Ausrichtung" + zähler + ":" + Rotation);
+		zähler += 1;
+	}
 
 }
-	
 
 
-	public Vector2 Drift(float dt){
+
+/*    public Vector2 Drift(float dt)  // Methode Fehlerhaft und wegen Zeitgründen zurückgestellt!
+    {
 		Vector2 velocity = new Vector2(0,1);
 	if(Velocity.Length() > 1){
 		float minradius = (Velocity.Length()*Velocity.Length())/(reibung*10f);
@@ -84,17 +93,20 @@ public override void _PhysicsProcess(double delta)
 	else return new Vector2(0,0);
 
 }
-	public void BerechnungTurn(Vector2 vel, float dt){
-		if(Velocity.Length() > 200){
-			turnfactor = (float) (1-(0.0005* Velocity.Length())); // ÄNDERN DAS IST SCHWACHSINN
-		}else if(Velocity.Length() < 1 ) turnfactor = 0;
-		else turnfactor = 1;
+*/
+public void BerechnungTurn(Vector2 vel, float dt){
+	if(Velocity.Length() > 200){
+		turnfactor = (float) (1-(0.0005* Velocity.Length())); 
+		}
+	else if(Velocity.Length() < 1 ) turnfactor = 0;
+	else turnfactor = 1;
 
-	 if(isOffTrack) reibung = 1f;
-  		else reibung = 2.0f;
+	if(isOffTrack) reibung = 1.5f;
+  	else reibung = 2.0f;
 	float drotation = Mathf.AngleDifference(Rotation, currentRotation);
 	if (vel.Length() > 0 && Math.Abs(drotation) > 0.001f){
-		kurvenradius = Math.Abs(vel.Length() / (drotation / dt));}
+		kurvenradius = Math.Abs(vel.Length() / (drotation / dt));
+	}
 	else kurvenradius = 9999f;
 	maxv = 6* Math.Sqrt(kurvenradius * 10f * reibung);
 	currentRotation = Rotation;}
