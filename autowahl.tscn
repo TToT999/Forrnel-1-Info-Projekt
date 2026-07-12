@@ -1,0 +1,149 @@
+[gd_scene load_steps=14 format=3 uid="uid://fuol6wq3fr5e"]
+
+[ext_resource type="Texture2D" uid="uid://dxwucydlijj4x" path="res://Sprites/na_logo_forrnel1.png" id="1_36uo1"]
+[ext_resource type="Script" uid="uid://hom1l4rtt5xj" path="res://Scripts/Controller-Scripts/Autowahl.cs" id="1_qqi8l"]
+[ext_resource type="Texture2D" uid="uid://dscww62c16yt" path="res://Sprites/Formula64x64/green_car.png" id="2_qqi8l"]
+[ext_resource type="Texture2D" uid="uid://dku7g70s0mnsc" path="res://Sprites/Formula64x64/lime_car.png" id="3_umydi"]
+[ext_resource type="Texture2D" uid="uid://berfogwxs3gtr" path="res://Sprites/Formula64x64/pink_car.png" id="4_qles6"]
+[ext_resource type="Texture2D" uid="uid://blju8l5aosgo5" path="res://Sprites/Formula64x64/black_car.png" id="5_ey04i"]
+[ext_resource type="Texture2D" uid="uid://bihfjkvb30tfg" path="res://Sprites/Formula64x64/gray_car.png" id="6_laej8"]
+[ext_resource type="Texture2D" uid="uid://nh8m5u5y3ogj" path="res://Sprites/Formula64x64/white_car.png" id="7_e1s41"]
+[ext_resource type="Texture2D" uid="uid://cce6mqia2c0lm" path="res://Sprites/Formula64x64/blue_car.png" id="8_31ylm"]
+[ext_resource type="Texture2D" uid="uid://bdlempcy5c8cm" path="res://Sprites/Formula64x64/red_car.png" id="9_ppbl0"]
+[ext_resource type="Texture2D" uid="uid://btebdxrvpj8rf" path="res://Sprites/Formula64x64/orange_car.png" id="10_2o6d0"]
+[ext_resource type="Texture2D" uid="uid://4isi2byorg1l" path="res://Sprites/Formula64x64/navyblue_car.png" id="11_hbdtp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u8uf7"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 2
+shadow_offset = Vector2(0, 2)
+
+[node name="Autowahl" type="Node2D"]
+script = ExtResource("1_qqi8l")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1153.0
+offset_bottom = 647.0
+
+[node name="Zurück 3" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -88.0
+offset_top = -73.0
+offset_right = 88.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 27
+theme_override_styles/normal = SubResource("StyleBoxFlat_u8uf7")
+text = "  Zurück  "
+
+[node name="NaLogoForrnel1" type="Sprite2D" parent="Control"]
+show_behind_parent = true
+position = Vector2(602, 309)
+scale = Vector2(1.10648, 0.764352)
+texture = ExtResource("1_36uo1")
+
+[node name="Einstellungen" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -176.0
+offset_bottom = 73.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 27
+theme_override_styles/normal = SubResource("StyleBoxFlat_u8uf7")
+text = "Einstellungen"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -387.5
+offset_top = -99.5
+offset_right = 383.5
+offset_bottom = 100.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 100
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 200
+
+[node name="aston" type="TextureButton" parent="Control/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("2_qqi8l")
+
+[node name="Kick" type="TextureButton" parent="Control/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("3_umydi")
+
+[node name="Alp" type="TextureButton" parent="Control/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("4_qles6")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Control/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 200
+
+[node name="Merc" type="TextureButton" parent="Control/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+texture_normal = ExtResource("5_ey04i")
+
+[node name="haa" type="TextureButton" parent="Control/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+texture_normal = ExtResource("6_laej8")
+
+[node name="RedBullLight" type="TextureButton" parent="Control/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+texture_normal = ExtResource("7_e1s41")
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Control/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 200
+
+[node name="Will" type="TextureButton" parent="Control/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+texture_normal = ExtResource("8_31ylm")
+
+[node name="Ferr" type="TextureButton" parent="Control/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+texture_normal = ExtResource("9_ppbl0")
+
+[node name="MC" type="TextureButton" parent="Control/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+texture_normal = ExtResource("10_2o6d0")
+
+[node name="Red" type="TextureButton" parent="Control/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+texture_normal = ExtResource("11_hbdtp")
+
+[connection signal="pressed" from="Control/Zurück 3" to="." method="_on_zurück_3_pressed"]
+[connection signal="pressed" from="Control/Einstellungen" to="." method="_on_einstellungen_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/HBoxContainer/aston" to="." method="_on_aston_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/HBoxContainer/Kick" to="." method="_on_kick_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/HBoxContainer/Alp" to="." method="_on_alp_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/HBoxContainer2/Merc" to="." method="_on_merc_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/HBoxContainer2/haa" to="." method="_on_haa_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/HBoxContainer2/RedBullLight" to="." method="_on_red_bull_light_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/HBoxContainer3/Will" to="." method="_on_will_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/HBoxContainer3/Ferr" to="." method="_on_ferr_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/HBoxContainer3/MC" to="." method="_on_mc_pressed"]
+[connection signal="pressed" from="Control/VBoxContainer/HBoxContainer3/Red" to="." method="_on_red_pressed"]
