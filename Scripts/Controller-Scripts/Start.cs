@@ -13,7 +13,7 @@ public partial class Start : Node2D
 		GetTree().ChangeSceneToFile("res://main_menu.tscn");
 	}
 	void _on_auto_pressed(){
-		//GetTree().ChangeSceneToFile();
+		GetTree().ChangeSceneToFile("res://autowahl.tscn");
 	}
 	void _on_track_pressed(){
 		GetTree().ChangeSceneToFile("res://trackwahl.tscn");

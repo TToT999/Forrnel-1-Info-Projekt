@@ -1,9 +1,46 @@
-[gd_scene format=3 uid="uid://bij3adbvlqw2f"]
+[gd_scene load_steps=4 format=3 uid="uid://bij3adbvlqw2f"]
+
+[ext_resource type="Script" uid="uid://bfpm0ybgarpii" path="res://Scripts/Controller-Scripts/Bestenliste.cs" id="1_5uii5"]
+[ext_resource type="Texture2D" uid="uid://dxwucydlijj4x" path="res://Sprites/na_logo_forrnel1.png" id="2_akt2q"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mq6nq"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 2
+shadow_offset = Vector2(0, 2)
 
 [node name="Bestenliste" type="Node2D"]
+script = ExtResource("1_5uii5")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="Zurück 5" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -88.0
+offset_top = -73.0
+offset_right = 88.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 27
+theme_override_styles/normal = SubResource("StyleBoxFlat_mq6nq")
+text = "  Zurück  "
+
+[node name="NaLogoForrnel1" type="Sprite2D" parent="Control"]
+show_behind_parent = true
+position = Vector2(602, 309)
+scale = Vector2(1.10648, 0.764352)
+texture = ExtResource("2_akt2q")
+
+[connection signal="pressed" from="Control/Zurück 5" to="." method="_on_zurück_5_pressed"]

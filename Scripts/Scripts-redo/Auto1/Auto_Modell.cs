@@ -4,10 +4,10 @@ using System;
 public partial class Auto_Modell : Node
 {
 	public float kurvenradius {get;set;} = 99999f;
-    public float reibung { get; set; } = 2.0f;
-    public float turnFactor { get; private set; }
-    public double maxV { get; private set; } = 9999;
-    public bool isOffTrack { get; set; } = false;
+	public float reibung { get; set; } = 2.0f;
+	public float turnFactor { get; private set; }
+	public double maxV { get; private set; } = 9999;
+	public bool isOffTrack { get; set; } = false;
 	public bool drifting {get; set;} = false;
 	public float currentRotation {private get; set;} = 0;
 	

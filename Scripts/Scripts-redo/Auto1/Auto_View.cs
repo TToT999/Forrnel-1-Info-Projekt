@@ -10,8 +10,8 @@ public partial class Auto_View : Node
 		effects = GetNode<Node2D>("Effects");
 	}
 
-    public void UpdateVisuals(Vector2 velocity, double maxV) 
-    {
-        effects.Visible = velocity.Length() >= maxV * 0.9;
-    }
+	public void UpdateVisuals(Vector2 velocity, double maxV) 
+	{
+		effects.Visible = velocity.Length() >= maxV * 0.9;
+	}
 	}
