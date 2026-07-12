@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cgolkbk4m48im"
-path="res://.godot/imported/1.png-322ad62a3f7d2f4bf9960ed7125837db.ctex"
+uid="uid://cbymrijdh70gq"
+path="res://.godot/imported/grass02.png-db393675a717de0462ef37de310b8879.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Full pack/color/white and black/Object and road/1.png"
-dest_files=["res://.godot/imported/1.png-322ad62a3f7d2f4bf9960ed7125837db.ctex"]
+source_file="res://Sprites/grass02.png"
+dest_files=["res://.godot/imported/grass02.png-db393675a717de0462ef37de310b8879.ctex"]
 
 [params]
 

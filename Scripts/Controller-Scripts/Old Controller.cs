@@ -2,7 +2,7 @@ using Godot;
 using System;
 using System.Collections.Generic;
 
-public partial class GameController : Node
+public partial class Old_Controller : Node
 {
  private Auto1 Player;
  private Area2D PlayerCollision;
@@ -35,12 +35,6 @@ public override void _Ready(){
    InstanceCheckpointsTrack(track1);
  }
 
-public Vector2 CalcTileMapPos(){ //Methode falsch rum gedacht?
-   Vector2 playerGlobal = Player.GlobalPosition;
-   Vector2 playerLocalToTilemap = Track.ToGlobal(playerGlobal);
-   Vector2I cell = Track.LocalToMap(playerLocalToTilemap);
-return cell;
-}
 
   
 
@@ -54,7 +48,7 @@ return cell;
       if(body is TileMapLayer) Player.Set_IsOffTrack(true);}
 
 public override void _PhysicsProcess(double delta){
-   CalcTileMapPos();
+   
 }
 
 public void InstanceCheckpointsTrack(Curve2D track) {

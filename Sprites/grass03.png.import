@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dexinvc33mcbm"
-path="res://.godot/imported/Race_Tileset_Map.png-64af66e605638ebc8fa68d2a01e3e6e3.ctex"
+uid="uid://cmnryr8ir8iyd"
+path="res://.godot/imported/grass03.png-7ccb29c7b7cec54bd0bc9acfd2ce0d64.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Race_Tileset/Race_Tileset_Map.png"
-dest_files=["res://.godot/imported/Race_Tileset_Map.png-64af66e605638ebc8fa68d2a01e3e6e3.ctex"]
+source_file="res://Sprites/grass03.png"
+dest_files=["res://.godot/imported/grass03.png-7ccb29c7b7cec54bd0bc9acfd2ce0d64.ctex"]
 
 [params]
 

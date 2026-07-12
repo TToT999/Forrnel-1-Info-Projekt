@@ -11,3 +11,17 @@ res://Scripts/Controller-Scripts/MainMenu.cs
 res://Scripts/Model-Scripts/Custom_List.cs
 res://test/test_Auto1.cs
 res://test/test_Auto1.gd
+res://Scripts/Scripts-redo/Modell/Auto_Modell.cs
+res://Scripts/Scripts-redo/Auto1/Auto_View.cs
+res://Scripts/Scripts-redo/Auto1/Auto1.cs
+res://Scripts/Scripts-redo/Auto1/Auto_Modell.cs
+res://Scripts/Controller-Scripts/Auto alt.cs
+res://Scripts/Controller-Scripts/Old Controller.cs
+res://Scripts/Scripts-redo/GameController/Game_Modell.cs
+res://Scripts/Scripts-redo/GameController/Game_View.cs
+res://Scripts/Scripts-redo/GameController/GameController.cs
+res://Track_Checkpoint.tscn
+res://Scripts/Scripts-redo/Track_Checkpoint/CheckpointModell.cs
+res://Scripts/Scripts-redo/Track_Checkpoint/CheckpointView.cs
+res://Scripts/Scripts-redo/Track_Checkpoint/Track_Checkpoint.cs
+res://Scripts/Model-Scripts/Old_Checkpoint.cs

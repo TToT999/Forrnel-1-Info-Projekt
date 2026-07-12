@@ -2,16 +2,13 @@ using Godot;
 using System;
 
 
-public partial class Track_Checkpoint : Node2D
+public partial class Old_Checkpoint : Node2D
 {
-	private bool isFinishLine = false;
-	private int checkpointNumber;
-	private GameController controller;
-	private Track_Checkpoint next;
 	
+/*	
 	public override void _Ready()
 	{
-		controller = GetParent().GetParent<GameController>();
+		controller = GetNode<GameController>("/root/Game/CONTROLLER");
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -20,7 +17,7 @@ public partial class Track_Checkpoint : Node2D
 	}
 
 	public void on_area_entered(Node2D body){
-	 	controller.SetTouchedCheckpoint(checkpointNumber);
+	 	controller.SetTouchedCheckpoint(checkpointNumber, this.GetParent<Path2D>());
 	}
 	public void on_area_exited(Node2D body){
 		
@@ -39,5 +36,5 @@ public partial class Track_Checkpoint : Node2D
 	}
 
 	public Track_Checkpoint get_Next() {return next;}
-
+*/
 }
