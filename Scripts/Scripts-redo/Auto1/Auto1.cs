@@ -5,18 +5,25 @@ public partial class Auto1 : CharacterBody2D
 {
 private Auto_View view;
 private Auto_Modell modell;
+private Global Global;
 private float deltatime = 0;
+private Vector2 vector = new Vector2(7000, 1000);
 
 public override void _Ready()
 	{
 		view = GetNode<Auto_View>("Auto-View");
 		modell = GetNode<Auto_Modell>("Auto-Modell");
+		Global = GetNode<Global>("Global");
+		if(Global.Tracknummer == 2){
+			SetPosition(vector);
+			}
 	}
 
 
 
 public override void _PhysicsProcess(double delta){
 	float dt = (float) delta;
+
 
 //Berechnung Reibung und Kurvenfahrt
 	modell.BerechnungTurn(Velocity, dt, Rotation);

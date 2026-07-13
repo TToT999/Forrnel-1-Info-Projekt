@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://barxk3h4wq1bq"]
+[gd_scene load_steps=20 format=4 uid="uid://barxk3h4wq1bq"]
 
 [ext_resource type="Script" uid="uid://m5ogcahleb00" path="res://Scripts/Scripts-redo/Auto1/Auto1.cs" id="1_fcgm6"]
 [ext_resource type="Texture2D" uid="uid://blju8l5aosgo5" path="res://Sprites/Formula64x64/black_car.png" id="2_ql7m1"]
@@ -7,10 +7,12 @@
 [ext_resource type="Script" uid="uid://x0mv7lxk0ya8" path="res://Scripts/Scripts-redo/Auto1/Auto_Modell.cs" id="5_4i15a"]
 [ext_resource type="Script" uid="uid://bpbryfuwx1d80" path="res://Scripts/Model-Scripts/Custom_List.cs" id="5_8ktr6"]
 [ext_resource type="Texture2D" uid="uid://cjc5lgh4yxhpx" path="res://Sprites/Track small.png" id="5_qauoq"]
+[ext_resource type="Script" uid="uid://1un757wujx6v" path="res://Scripts/Controller-Scripts/Global.cs" id="6_4k8yb"]
 [ext_resource type="Script" uid="uid://yf5kr116bq4j" path="res://Scripts/Scripts-redo/GameController/GameController.cs" id="7_0vc60"]
 [ext_resource type="Texture2D" uid="uid://cbymrijdh70gq" path="res://Sprites/grass02.png" id="7_x6dms"]
 [ext_resource type="Script" uid="uid://ttmuv27ffglk" path="res://Scripts/Scripts-redo/GameController/Game_View.cs" id="8_vu324"]
 [ext_resource type="Script" uid="uid://djck35lchdon3" path="res://Scripts/Scripts-redo/GameController/Game_Modell.cs" id="10_4k8yb"]
+[ext_resource type="Script" uid="uid://0w5snm2fu5bd" path="res://panel.gd" id="12_vu324"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hhscq"]
 size = Vector2(28, 53)
@@ -7080,7 +7082,7 @@ point_count = 131
 
 [node name="Auto" type="CharacterBody2D" parent="."]
 z_index = 2
-position = Vector2(5000, 0)
+position = Vector2(-775, -625)
 scale = Vector2(0.4, 0.4)
 disable_mode = 2
 collision_layer = 255
@@ -7119,6 +7121,9 @@ rotation_smoothing_speed = 1.0
 
 [node name="Auto-Modell" type="Node" parent="Auto"]
 script = ExtResource("5_4i15a")
+
+[node name="Global" type="Node" parent="Auto"]
+script = ExtResource("6_4k8yb")
 
 [node name="Tracks" type="Node2D" parent="."]
 
@@ -7160,6 +7165,36 @@ z_index = -5
 position = Vector2(6371, 337)
 scale = Vector2(4, 4)
 texture = ExtResource("7_x6dms")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+offset_right = 104.0
+offset_bottom = 24.0
+script = ExtResource("12_vu324")
+
+[node name="Minutes" type="Label" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_right = 36.0
+offset_bottom = 33.0
+text = "00:  "
+horizontal_alignment = 2
+
+[node name="Seconds" type="Label" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = 14.0
+offset_right = 61.0
+offset_bottom = 33.0
+text = "   00"
+horizontal_alignment = 2
+
+[node name="Msecs" type="Label" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = 41.0
+offset_right = 93.0
+offset_bottom = 33.0
+text = "   .000"
+horizontal_alignment = 2
 
 [connection signal="body_entered" from="Auto/Area2D" to="CONTROLLER" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Auto/Area2D" to="CONTROLLER" method="_on_area_2d_body_exited"]

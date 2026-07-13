@@ -15,7 +15,7 @@ public partial class Track_Checkpoint : Node2D
 		modell = GetNode<CheckpointModell>("Checkpoint_Modell");
 		view = GetNode<CheckpointView>("Checkpoint_View");
 		controller = GetNode<GameController>("/root/Game/CONTROLLER");
-		view.Visible = false;
+		view.Visible = true;
 	}
 	
 	public void set_checkpointNumber (int i)
@@ -38,5 +38,6 @@ public partial class Track_Checkpoint : Node2D
 	public void SetTouchedCheckpoint(int i)
 	{
 		controller.SetTouchedCheckpoint(i, this.GetParent<Path2D>());
+		GD.Print(i);
 	}
 }

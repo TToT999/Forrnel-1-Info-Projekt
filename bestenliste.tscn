@@ -1,16 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://bij3adbvlqw2f"]
+[gd_scene load_steps=3 format=3 uid="uid://bij3adbvlqw2f"]
 
 [ext_resource type="Script" uid="uid://bfpm0ybgarpii" path="res://Scripts/Controller-Scripts/Bestenliste.cs" id="1_5uii5"]
 [ext_resource type="Texture2D" uid="uid://dxwucydlijj4x" path="res://Sprites/na_logo_forrnel1.png" id="2_akt2q"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mq6nq"]
-bg_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
-shadow_size = 2
-shadow_offset = Vector2(0, 2)
 
 [node name="Bestenliste" type="Node2D"]
 script = ExtResource("1_5uii5")
@@ -21,6 +12,122 @@ anchors_preset = 0
 offset_right = 1152.0
 offset_bottom = 648.0
 
+[node name="NaLogoForrnel1" type="Sprite2D" parent="Control"]
+show_behind_parent = true
+position = Vector2(602, 309)
+scale = Vector2(1.10648, 0.764352)
+texture = ExtResource("2_akt2q")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -225.5
+offset_right = 225.5
+offset_bottom = 2779.0
+grow_horizontal = 2
+theme_override_constants/separation = 250
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="Label" type="Label" parent="Control/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "     Track 1     "
+
+[node name="Label2" type="Label" parent="Control/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="Label3" type="Label" parent="Control/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="Label4" type="Label" parent="Control/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="Label5" type="Label" parent="Control/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="Label6" type="Label" parent="Control/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="Label7" type="Label" parent="Control/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="Label8" type="Label" parent="Control/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="Label9" type="Label" parent="Control/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="Label10" type="Label" parent="Control/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="Label11" type="Label" parent="Control/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Control/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="Label12" type="Label" parent="Control/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "     Track 2     
+"
+
+[node name="Label13" type="Label" parent="Control/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="Label14" type="Label" parent="Control/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="Label15" type="Label" parent="Control/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="Label16" type="Label" parent="Control/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="Label17" type="Label" parent="Control/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="Label18" type="Label" parent="Control/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="Label19" type="Label" parent="Control/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="Label20" type="Label" parent="Control/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="Label21" type="Label" parent="Control/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="Label22" type="Label" parent="Control/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
 [node name="Zurück 5" type="Button" parent="Control"]
 layout_mode = 1
 anchors_preset = 7
@@ -28,19 +135,11 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -88.0
-offset_top = -73.0
-offset_right = 88.0
+offset_left = -68.0
+offset_top = -64.0
+offset_right = 68.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_font_sizes/font_size = 27
-theme_override_styles/normal = SubResource("StyleBoxFlat_mq6nq")
-text = "  Zurück  "
-
-[node name="NaLogoForrnel1" type="Sprite2D" parent="Control"]
-show_behind_parent = true
-position = Vector2(602, 309)
-scale = Vector2(1.10648, 0.764352)
-texture = ExtResource("2_akt2q")
+text = "Zurück"
 
 [connection signal="pressed" from="Control/Zurück 5" to="." method="_on_zurück_5_pressed"]

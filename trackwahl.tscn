@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://cevu6ssmk5357"]
 
-[ext_resource type="Script" uid="uid://25r3rtkeacpa" path="res://Scripts/Controller-Scripts/Trackwahl.cs" id="1_bb0jw"]
+[ext_resource type="Script" uid="uid://bb7scqmnly63u" path="res://trackwahl.gd" id="1_bb0jw"]
 [ext_resource type="Texture2D" uid="uid://dxwucydlijj4x" path="res://Sprites/na_logo_forrnel1.png" id="2_lcwsq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2tf2v"]
@@ -61,18 +61,6 @@ position = Vector2(602, 309)
 scale = Vector2(1.10648, 0.764352)
 texture = ExtResource("2_lcwsq")
 
-[node name="Einstellungen" type="Button" parent="Control"]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -176.0
-offset_bottom = 73.0
-grow_horizontal = 0
-theme_override_font_sizes/font_size = 27
-theme_override_styles/normal = SubResource("StyleBoxFlat_2tf2v")
-text = "Einstellungen"
-
 [node name="HBoxContainer" type="HBoxContainer" parent="Control"]
 layout_mode = 1
 anchors_preset = 8
@@ -101,6 +89,5 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_hl86x")
 text = "    Track 2    "
 
 [connection signal="pressed" from="Control/Zurück 2" to="." method="_on_zurück_2_pressed"]
-[connection signal="pressed" from="Control/Einstellungen" to="." method="_on_einstellungen_pressed"]
 [connection signal="pressed" from="Control/HBoxContainer/Track 1" to="." method="_on_track_1_pressed"]
 [connection signal="pressed" from="Control/HBoxContainer/Track 2" to="." method="_on_track_2_pressed"]
